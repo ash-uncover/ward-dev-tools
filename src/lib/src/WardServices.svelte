@@ -1,3 +1,5 @@
+<svelte:options tag="ward-dev-tools-services" />
+
 <script lang="ts">
   import Ward, { type Message } from '@uncover/ward'
   import { onDestroy } from 'svelte'
