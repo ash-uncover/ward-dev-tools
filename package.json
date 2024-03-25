@@ -1,9 +1,19 @@
 {
   "name": "@uncover/ward-dev-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "author": "aSH <ash.uncover@gmail.com>",
+  "description": "Ward Dev Tools",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ash-uncover/ward-dev-tools.git"
+  },
   "type": "module",
   "module": "dist/lib/ward-dev-tools.js",
   "main": "dist/lib/ward-dev-tools.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "npm run dev -s",
     "dev": "vite --config vite.demo.config.ts",
@@ -13,7 +23,7 @@
     "build:demo": "vite build --config vite.demo.config.ts",
     "preview": "vite preview --config vite.demo.config.ts",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "prepublishOnly": "npm run build -s"
+    "prepublishOnly": "npm run build:basic -s && npm run build:base -s"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
@@ -26,8 +36,5 @@
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
     "vite": "^4.0.4"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
