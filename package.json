@@ -7,7 +7,9 @@
   "scripts": {
     "start": "npm run dev -s",
     "dev": "vite --config vite.demo.config.ts",
-    "build": "vite build",
+    "build": "npm run build:basic && npm run build:base",
+    "build:basic": "vite build",
+    "build:base": "vite build --config vite.base.config.ts",
     "build:demo": "vite build --config vite.demo.config.ts",
     "preview": "vite preview --config vite.demo.config.ts",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -26,6 +28,6 @@
     "vite": "^4.0.4"
   },
   "files": [
-    "dist/lib"
+    "dist"
   ]
 }
