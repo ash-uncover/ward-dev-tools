@@ -1,13 +1,13 @@
-name: PR-checks
+name: publish-npm
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
 jobs:
-  build:
-    name: check pull request
+  build-publish:
+    name: build publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project
@@ -35,5 +35,7 @@ jobs:
       - name: build
         run: npm run build
 
-      - name: test
-        run: npm run test:coverage
+      - name: publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
