@@ -6,7 +6,7 @@
     type Message,
     type WardData,
   } from "@uncover/ward";
-  import MessageDispatcher from "@uncover/ward/dist/message/MessageDispatcher";
+  
   import { onDestroy } from "svelte";
 
   interface MessageLog extends Message {
@@ -71,7 +71,7 @@
       <ui5-list>
         {#each Object.values(data.dispatchers) as dispatcher}
           <ui5-li>
-            <ui5-label>{dispatcher.id}</ui5-label>
+            <ui5-label>{dispatcher}</ui5-label>
           </ui5-li>
         {/each}
       </ui5-list>
