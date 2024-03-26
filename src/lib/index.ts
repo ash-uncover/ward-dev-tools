@@ -10,6 +10,4 @@ import '@ui5/webcomponents/dist/Tab.js'
 import '@ui5/webcomponents/dist/TabContainer'
 import '@ui5/webcomponents/dist/Title'
 
-export { default as WardDevTools } from './src/WardDevTools.wc.svelte';
-export { default as WardPlugins } from './src/WardPlugins.svelte';
-export { default as WardServices } from './src/WardServices.svelte';
+import './src/WardDevTools.wc.svelte';
