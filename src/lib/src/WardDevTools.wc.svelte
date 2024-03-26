@@ -1,23 +1,32 @@
 <svelte:options tag="ward-dev-tools" />
 
 <script>
+  let avatar;
   let dialog;
 
   function onOpenDevTools() {
     dialog.show();
+    setTimeout(() => {
+      avatar.pressed = false;
+    }, 0);
   }
 
   function onCloseDevTools() {
     dialog.close();
+    setTimeout(() => {
+      avatar.pressed = false;
+      avatar.focus();
+    }, 0);
   }
 </script>
 
 <span>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <ui5-avatar
+    bind:this={avatar}
     class="ward-dev-tools-button"
     part="ward-dev-tools-button"
-    colorScheme="Accent7"
+    color-scheme="Accent9"
     design="Emphasized"
     icon="world"
     interactive
@@ -28,6 +37,7 @@
   <ui5-dialog
     bind:this={dialog}
     class="ward-dev-tools-dialog"
+    data-ui5-compact-size
     header-text="Ward Dev Tools"
   >
     <ward-dev-tools-content />
@@ -42,11 +52,6 @@
 </span>
 
 <style>
-  .ward-dev-tools-button {
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-  }
   .ward-dev-tools-dialog {
     width: 80%;
     height: 80%;
