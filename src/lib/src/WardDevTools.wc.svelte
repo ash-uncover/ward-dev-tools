@@ -12,10 +12,12 @@
   }
 </script>
 
-<div>
+<span>
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <ui5-avatar
     class="ward-dev-tools-button"
+    part="ward-dev-tools-button"
+    colorScheme="Accent7"
     design="Emphasized"
     icon="world"
     interactive
@@ -32,10 +34,12 @@
 
     <ui5-bar slot="footer">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <ui5-button on:click={onCloseDevTools} slot='endContent'> Close </ui5-button>
+      <ui5-button on:click={onCloseDevTools} slot="endContent">
+        Close
+      </ui5-button>
     </ui5-bar>
   </ui5-dialog>
-</div>
+</span>
 
 <style>
   .ward-dev-tools-button {
