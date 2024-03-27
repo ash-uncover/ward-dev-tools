@@ -18,7 +18,7 @@
   Ward.register(onWardDataChange);
 
   const wardLogService = Ward.addService("ward-dev-tools--log-service");
-  let wardTestService: ServiceEvent;
+  let wardTestService: ServiceEvent | null = null;
 
   wardLogService.addHandler((message: Message) => {
     messages = [
@@ -36,7 +36,7 @@
   }
 
   function onSendTestMessage() {
-    wardTestService.sendMessage({
+    wardTestService && wardTestService.sendMessage({
       type: "test-message",
       payload: "test",
     });

@@ -1,4 +1,6 @@
-<script>
+<svelte:options tag={null} />
+
+<script lang="ts">
 </script>
 
 <ui5-tab text='Plugins'>

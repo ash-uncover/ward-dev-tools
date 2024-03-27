@@ -18,6 +18,4 @@ import '@ui5/webcomponents/dist/Title.js'
 import '@ui5/webcomponents-fiori/dist/Bar.js'
 
 import './src/WardDevTools.wc.svelte';
-import './src/WardDevToolsButton.wc.svelte';
-import './src/WardDevToolsDialog.wc.svelte';
 import './src/WardDevToolsContent.wc.svelte';
