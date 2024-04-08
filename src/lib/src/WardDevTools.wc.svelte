@@ -57,8 +57,8 @@
 
 <style>
   .ward-dev-tools-dialog {
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 95%;
   }
   .ward-dev-tools-dialog::part(content) {
     padding: 0;
