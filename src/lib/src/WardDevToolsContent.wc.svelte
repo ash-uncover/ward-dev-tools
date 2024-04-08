@@ -1,11 +1,11 @@
 <svelte:options tag="ward-dev-tools-content" />
 
 <script lang="ts">
-  import WardPlugins from "./WardDevToolsPlugins.svelte";
-  import WardServices from "./WardDevToolsServices.svelte";
+  import WardPlugins from "./plugins/WardPlugins.svelte";
+  import WardServices from "./services/WardServices.svelte";
 </script>
 
-<ui5-tabcontainer fixed>
+<ui5-tabcontainer fixed data-ui5-compact-size>
   <WardPlugins />
   <WardServices />
 </ui5-tabcontainer>
