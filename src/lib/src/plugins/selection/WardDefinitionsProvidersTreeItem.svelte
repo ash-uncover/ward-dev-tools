@@ -1,7 +1,6 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import Ward, { type WardData } from '@uncover/ward'
   import { WardStore } from '../../WardStore'
   import { onDestroy, onMount } from 'svelte'
   import { SelectionStore, type SelectionData } from '../../SelectionStore'
@@ -20,11 +19,9 @@
   })
 
   let provider: any
+  $: provider = $WardStore.providers[providerId]
   let providers: Record<string, any>
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    provider = Ward.data.providers[providerId]
-    providers = Object.values(wardData.providers)
-  })
+  $: providers = Object.values($WardStore.providers)
 
   // Lifecycle //
 
@@ -36,7 +33,6 @@
 
   onDestroy(() => {
     unsubscribeSelection()
-    unsubscribeWard()
   })
 </script>
 

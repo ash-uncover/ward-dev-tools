@@ -10,10 +10,6 @@
   import WardDetails from './details/WardDetails.svelte'
   import { SelectionStore, type SelectionData } from '../SelectionStore'
 
-  export let plugin = 'https://ash-uncover.github.io/ap-games/plugin.json'
-
-  Ward.loadPlugin(plugin)
-
   let selectionType: string | null
   let selectionId: string | null
   const unsubscribeSelection = SelectionStore.subscribe((selectionData: SelectionData) => {
@@ -21,18 +17,15 @@
     selectionId = selectionData.id
   })
 
-  $: layout = selectionId && selectionType ? "TwoColumnsMidExpanded" : "OneColumn"
+  $: layout = selectionId && selectionType ? 'TwoColumnsMidExpanded' : 'OneColumn'
 
-  let data: WardData
-  const unsubscribeWard = WardStore.subscribe((wardData) => {
-    data = wardData
-  })
+  let data: any
+  $: data = $WardStore
 
   // Lifecycle //
 
   onDestroy(() => {
     unsubscribeSelection()
-    unsubscribeWard()
   })
 </script>
 
@@ -48,17 +41,9 @@
       slot="startColumn"
       style="padding-right:1em;"
     >
-      {#if Object.values(data.urls).length}
-        <WardUrlsTree />
-      {/if}
-
-      {#if Object.values(data.plugins).length}
-        <WardPluginsTree />
-      {/if}
-
-      {#if Object.values(data.definitions).length}
-        <WardDefinitionsTree />
-      {/if}
+      <WardUrlsTree />
+      <WardPluginsTree />
+      <WardDefinitionsTree />
     </div>
 
     <div slot="midColumn">

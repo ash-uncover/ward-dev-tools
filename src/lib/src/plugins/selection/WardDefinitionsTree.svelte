@@ -1,26 +1,22 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import { onDestroy, onMount } from 'svelte'
+  import { onMount } from 'svelte'
   import { WardStore } from '../../WardStore'
   import WardDefinitionsTreeItem from './WardDefinitionsTreeItem.svelte'
   import { SelectionStore } from '../../SelectionStore'
 
+  // Stores //
   let definitions: Record<string, any>
-
-  let treeDefinition: HTMLElement
-
-  const unsubscribe = WardStore.subscribe((wardData) => {
-    definitions = wardData.definitions
-  })
+  $: definitions = $WardStore.definitions
 
   // Lifecycle //
+
+  let treeDefinition: HTMLElement
 
   onMount(() => {
     treeDefinition.addEventListener('item-click', handleTreeItemDefinitionClick)
   })
-
-  onDestroy(unsubscribe)
 
   // Event Handlers //
 
