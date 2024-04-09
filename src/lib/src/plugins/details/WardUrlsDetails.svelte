@@ -11,22 +11,14 @@
 
   // Store access //
 
-  let urls: any
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    urls = wardData.urls
-  })
-
-  // Lifecycle //
-
-  onDestroy(() => {
-    unsubscribeWard()
-  })
+  let url: any
+  $: url = $WardStore.urls[urlId]
 </script>
 
 <div>
-  <ui5-title level='H5'>URL Details</ui5-title>
+  <ui5-title level='H5'>{`URL Details (${urlId})`}</ui5-title>
   <p>{urlId}</p>
-  <pre>{JSON.stringify(urls[urlId].data, null, 2)}</pre>
+  <pre>{JSON.stringify(url.data, null, 2)}</pre>
 </div>
 
 <style>

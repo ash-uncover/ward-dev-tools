@@ -13,15 +13,7 @@
   // Stores //
 
   let provider: PluginProvider
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    provider = wardData.providers[providerId]
-  })
-
-  // Lifecycle //
-
-  onDestroy(() => {
-    unsubscribeWard()
-  })
+  $: provider = $WardStore.providers[providerId]
 </script>
 
 <div>
