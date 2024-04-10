@@ -3,7 +3,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte'
   import { WardStore } from '../../WardStore'
-  import type { WardData } from '@uncover/ward'
   import { SelectionStore, type SelectionData } from '../../SelectionStore'
 
   // Properties //
@@ -20,11 +19,10 @@
   })
 
   let url: any
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    url = wardData.urls[urlId]
-  })
-
-  $: highlight = url.state === 'LOADED' ? 'Success' : 'Error'
+  $: url = $WardStore.urls[urlId]
+  $: highlight = url.state === 'LOADED' ? 'Success' : url.state === 'EXCLUDED' ? 'Warning' : 'Error'
+  let plugins: Record<string, any>
+  $: plugins = $WardStore.roots
 
   // Lifecycle //
 
@@ -36,7 +34,6 @@
 
   onDestroy(() => {
     unsubscribeSelection()
-    unsubscribeWard()
   })
 </script>
 

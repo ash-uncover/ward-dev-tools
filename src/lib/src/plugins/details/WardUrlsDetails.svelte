@@ -1,9 +1,7 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import { onDestroy } from 'svelte'
   import { WardStore } from '../../WardStore'
-  import type { WardData } from '@uncover/ward'
 
   // Properties //
 

@@ -3,7 +3,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte'
   import { WardStore } from '../../WardStore'
-  import type { WardData } from '@uncover/ward'
   import { SelectionStore, type SelectionData } from '../../SelectionStore'
 
   // Properties //
@@ -20,12 +19,9 @@
   })
 
   let plugin: any
+  $: plugin = $WardStore.plugins[pluginId]
   let plugins: Record<string, any>
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    plugin = wardData.plugins[pluginId]
-    plugins = wardData.plugins
-  })
-
+  $: plugins = $WardStore.plugins
   $: dependencyIds = (plugin?.dependencies || []).map((dependency: string) => {
     const plugin = Object.values(plugins).find((p) => p.loadUrl === dependency)
     return plugin?.name
@@ -43,7 +39,6 @@
 
   onDestroy(() => {
     unsubscribeSelection()
-    unsubscribeWard()
   })
 </script>
 

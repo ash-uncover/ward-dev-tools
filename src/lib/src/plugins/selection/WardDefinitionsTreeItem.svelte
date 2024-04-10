@@ -1,7 +1,6 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import Ward, { type WardData } from '@uncover/ward'
   import { WardStore } from '../../WardStore'
   import { onDestroy, onMount } from 'svelte'
   import WardDefinitionsProvidersTreeItem from './WardDefinitionsProvidersTreeItem.svelte'
@@ -21,13 +20,9 @@
   })
 
   let definition: any
+  $: definition = $WardStore.definitions[definitionId]
   let providers: Record<string, any>
-  $: providers
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    definition = Ward.data.definitions[definitionId]
-    providers = Object.values(wardData.providers)
-  })
-
+  $: providers = Object.values($WardStore.providers)
   $: providerIds = (providers ?? [])
     .filter((provider: any) => provider.definition === definitionId)
     .map((provider: any) => provider.name)
@@ -42,7 +37,6 @@
 
   onDestroy(() => {
     unsubscribeSelection()
-    unsubscribeWard()
   })
 </script>
 

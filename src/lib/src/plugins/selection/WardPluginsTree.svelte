@@ -7,10 +7,10 @@
   import type { WardData } from '@uncover/ward'
   import { SelectionStore } from '../../SelectionStore'
 
+  // Stores //
+
   let plugins: Record<string, any>
-  const unsubscribeWard = WardStore.subscribe((wardData: WardData) => {
-    plugins = wardData.roots
-  })
+  $: plugins = $WardStore.roots
 
   // Lifecycle //
 
@@ -18,8 +18,6 @@
   onMount(() => {
     treePlugin.addEventListener('item-click', handleTreeItemPluginClick)
   })
-
-  onDestroy(unsubscribeWard)
 
   // Event Handlers //
 
