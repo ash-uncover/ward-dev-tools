@@ -18,7 +18,8 @@
   let buttonUrl: HTMLElement
   let treeUrl: HTMLElement
   onMount(() => {
-    inputUrl.addEventListener('change', handleButtonUrlClick)
+    inputUrl.addEventListener('input', handleInputUrlInput)
+    inputUrl.addEventListener('change', handleInputUrlChange)
     buttonUrl.addEventListener('click', handleButtonUrlClick)
     treeUrl.addEventListener('item-click', handleTreeItemUrlClick)
     treeUrl.addEventListener('item-delete', handleTreeItemUrlDelete)
@@ -26,8 +27,24 @@
 
   // Event Handlers //
 
+  function handleInputUrlInput() {
+    if (inputUrl.value && inputUrl.value.trim()) {
+      buttonUrl.removeAttribute('disabled')
+    } else {
+      buttonUrl.setAttribute('disabled', '')
+    }
+  }
+
+  function handleInputUrlChange() {
+    handleInputUrlInput()
+    handleButtonUrlClick()
+  }
+
   function handleButtonUrlClick() {
-    Ward.loadPlugin(inputUrl.value)
+    if (inputUrl.value && inputUrl.value.trim()) {
+      Ward.loadPlugin(inputUrl.value)
+      inputUrl.value = ''
+    }
   }
 
   function handleTreeItemUrlClick(event: any) {
@@ -49,15 +66,13 @@
 
   function handleTreeItemUrlDelete(event: any) {
     const id = event.detail.item.getAttribute('data-attribute-id')
-    console.log(id)
-    console.log(event.detail.item.highlight)
     switch (event.detail.item.highlight) {
       case 'Success': {
         Ward.unloadPlugin(id)
         break
       }
-      case 'Critical': {
-        Ward.unexcludePlugin(id)
+      case 'Warning': {
+        Ward.loadPlugin(id)
         break
       }
       default: {
@@ -86,6 +101,8 @@
     ></ui5-input>
     <ui5-button
       bind:this={buttonUrl}
+      disabled
+      style='margin-left: 0.5rem'
       icon="add"
     >
       Load plugin

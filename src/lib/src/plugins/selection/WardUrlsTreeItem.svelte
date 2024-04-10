@@ -20,7 +20,7 @@
 
   let url: any
   $: url = $WardStore.urls[urlId]
-  $: highlight = url.state === 'LOADED' ? 'Success' : url.state === 'EXCLUDED' ? 'Critical' : 'Error'
+  $: highlight = url.state === 'LOADED' ? 'Success' : url.state === 'EXCLUDED' ? 'Warning' : 'Error'
   let plugins: Record<string, any>
   $: plugins = $WardStore.roots
 
@@ -45,12 +45,8 @@
     text={urlId}
     data-attribute-id={urlId}
     selected={selectionType === 'url' && selectionId === urlId}
-    class='toto'
   />
 {/if}
 
 <style>
-  .toto::part(delete-button)  {
-    display: none
-  }
 </style>
