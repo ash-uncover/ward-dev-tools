@@ -41,7 +41,7 @@
     class="ward-dev-tools-dialog"
     data-ui5-compact-size
     draggable
-    header-text="Ward Dev Tools"
+    header-text={`Ward Dev Tools${window.uncover.wardVersion ? ` (${window.uncover.wardVersion})` : ''}`}
     resizable
   >
     <ward-dev-tools-content />
