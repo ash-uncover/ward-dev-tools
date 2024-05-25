@@ -1,6 +1,6 @@
 {
   "name": "@uncover/ward-dev-tools",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "Ward Dev Tools",
   "license": "MIT",
@@ -29,9 +29,9 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "@tsconfig/svelte": "5.0.4",
-    "@ui5/webcomponents": "1.24.3",
-    "@ui5/webcomponents-fiori": "1.24.3",
-    "@ui5/webcomponents-icons": "1.24.3",
+    "@ui5/webcomponents": "1.24.0",
+    "@ui5/webcomponents-fiori": "1.24.0",
+    "@ui5/webcomponents-icons": "1.24.0",
     "@uncover/js-utils-logger": "0.2.1",
     "@uncover/ward": "0.2.23",
     "svelte": "^3.52.0",
@@ -42,6 +42,6 @@
     "vite": "^4.5.3"
   },
   "dependencies": {
-    
+
   }
 }

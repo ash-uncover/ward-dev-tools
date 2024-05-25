@@ -1,8 +1,8 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import { WardStore } from '../../WardStore'
   import { onDestroy, onMount } from 'svelte'
+  import { WardStore } from '../../WardStore'
   import { SelectionStore, type SelectionData } from '../../SelectionStore'
 
   // Properties //

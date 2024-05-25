@@ -1,8 +1,7 @@
 <svelte:options tag={null} />
 
 <script lang="ts">
-  import Ward, { type WardData } from '@uncover/ward'
-  import { onDestroy, onMount } from 'svelte'
+  import { onDestroy } from 'svelte'
   import { WardStore } from '../WardStore'
   import WardUrlsTree from './selection/WardUrlsTree.svelte'
   import WardPluginsTree from './selection/WardPluginsTree.svelte'
@@ -43,7 +42,6 @@
     >
       <WardUrlsTree />
       <WardPluginsTree />
-      <WardDefinitionsTree />
     </div>
 
     <div slot="midColumn">
