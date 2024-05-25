@@ -1,6 +1,6 @@
 {
   "name": "@uncover/ward-dev-tools",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "Ward Dev Tools",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "@ui5/webcomponents-fiori": "1.24.3",
     "@ui5/webcomponents-icons": "1.24.3",
     "@uncover/js-utils-logger": "0.2.1",
-    "@uncover/ward": "0.2.22",
+    "@uncover/ward": "0.2.23",
     "svelte": "^3.52.0",
     "svelte-check": "^3.0.3",
     "svelte-preprocess": "^5.0.1",
