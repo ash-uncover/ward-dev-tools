@@ -8851,8 +8851,6 @@ function Af() {
 }
 var $e = Af();
 const ft = Xu({
-  plugin: null,
-  loaded: !1,
   urls: {},
   roots: {},
   plugins: {},

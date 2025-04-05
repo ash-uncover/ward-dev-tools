@@ -4381,7 +4381,7 @@ let de = Ye = class extends Ue {
     const e = (i) => {
       i.i18nBundle = Ye.i18nBundle, this.Suggestions = new i(this, "suggestionItems", !0, !1);
     };
-    Ye.SuggestionsClass ? e(Ye.SuggestionsClass) : import("./InputSuggestions-Bw6HXHBD.js").then((i) => {
+    Ye.SuggestionsClass ? e(Ye.SuggestionsClass) : import("./InputSuggestions-BdbHt19J.js").then((i) => {
       e(i.default);
     });
   }
@@ -19842,8 +19842,6 @@ function JB() {
 }
 var ht = JB();
 const Yi = d0({
-  plugin: null,
-  loaded: !1,
   urls: {},
   roots: {},
   plugins: {},
