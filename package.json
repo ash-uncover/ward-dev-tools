@@ -1,5 +1,5 @@
 {
-  "name": "@uncover/ward-dev-tools",
+  "name": "@sol.ac/ward-dev-tools",
   "version": "1.0.0",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "Ward Dev Tools",
@@ -23,7 +23,6 @@
     "build:base": "vite build --config vite.base.config.ts",
     "build:docs": "vite build --config vite.docs.config.ts",
     "preview": "vite preview --config vite.docs.config.ts",
-    "postinstall": "npm update @uncover/js-utils-logger @uncover/ward",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "prepublishOnly": "npm run build:basic -s && npm run build:base -s",
     "prepare": "husky"
@@ -34,10 +33,10 @@
     "@ui5/webcomponents": "2.9.0",
     "@ui5/webcomponents-fiori": "2.9.0",
     "@ui5/webcomponents-icons": "2.9.0",
-    "@uncover/js-utils-logger": "ash-uncover/js-utils-logger",
-    "@uncover/ward": "ash-uncover/ward",
+    "@sol.ac/js-utils-logger": "1.0.3",
+    "@sol.ac/ward": "1.0.1",
     "husky": "9.1.7",
-    "svelte": "5.25.6",
+    "svelte": "5.25.7",
     "svelte-check": "4.1.5",
     "typescript": "5.8.3",
     "vite": "6.2.5",

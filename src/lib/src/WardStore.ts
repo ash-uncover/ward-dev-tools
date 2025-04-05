@@ -1,10 +1,10 @@
 import { writable } from 'svelte/store';
 
-import { Ward } from '@uncover/ward'
-import type PluginProvider from '@uncover/ward/dist/plugin/object/PluginProvider';
-import type { PluginManagerDataUrl } from '@uncover/ward/dist/plugin/PluginManager';
-import type Plugin from '@uncover/ward/dist/plugin/object/Plugin';
-import type { MessageDispatcherDataServices } from '@uncover/ward/dist/message/MessageDispatcher';
+import { Ward } from '@sol.ac/ward'
+import type PluginProvider from '@sol.ac/ward/dist/plugin/object/PluginProvider';
+import type { PluginManagerDataUrl } from '@sol.ac/ward/dist/plugin/PluginManager';
+import type Plugin from '@sol.ac/ward/dist/plugin/object/Plugin';
+import type { MessageDispatcherDataServices } from '@sol.ac/ward/dist/message/MessageDispatcher';
 
 interface WardStoreData {
   urls: Record<string, PluginManagerDataUrl>

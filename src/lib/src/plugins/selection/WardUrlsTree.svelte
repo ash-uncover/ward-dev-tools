@@ -3,7 +3,7 @@
   import { WardStore } from '../../WardStore'
   import WardTreeItemUrl from './WardUrlsTreeItem.svelte'
   import { SelectionStore } from '../../SelectionStore'
-  import { Ward } from '@uncover/ward'
+  import { Ward } from '@sol.ac/ward'
 
   // Stores //
 

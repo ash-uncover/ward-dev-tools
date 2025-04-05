@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import { LogLevels } from "@uncover/js-utils-logger";
+  import { LogLevels } from "@sol.ac/js-utils-logger";
   import {
     Ward, 
     ServiceEvent,
     type Message,
     type WardData,
-  } from "@uncover/ward";
+  } from "@sol.ac/ward";
 
   interface MessageLog extends Message {
     timestamp: Date;
