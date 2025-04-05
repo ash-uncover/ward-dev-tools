@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-import Ward, { type WardData } from '@uncover/ward'
+import { Ward } from '@uncover/ward'
 import type PluginProvider from '@uncover/ward/dist/plugin/object/PluginProvider';
 
 interface WardStoreData {

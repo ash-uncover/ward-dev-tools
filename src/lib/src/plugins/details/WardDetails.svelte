@@ -1,5 +1,3 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onDestroy } from 'svelte'
   import { SelectionStore, type SelectionData } from '../../SelectionStore'

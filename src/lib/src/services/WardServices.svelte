@@ -1,9 +1,8 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import { LogLevels } from "@uncover/js-utils-logger";
-  import Ward, {
+  import {
+    Ward, 
     ServiceEvent,
     type Message,
     type WardData,
@@ -106,7 +105,7 @@
     }
   }
 
-  function handleListMessagesSelectionChange(event) {
+  function handleListMessagesSelectionChange(event: any) {
     const messageClicked =
       messages[
         event.detail.selectedItems[0].getAttribute("data-message-index")
@@ -221,7 +220,7 @@
             <div
               style="display:flex;align-items:center;width:100%;height:2rem;"
             >
-              <ui5-icon style="margin-inline-end:0.5rem" name="email" />
+              <ui5-icon style="margin-inline-end:0.5rem" name="email"></ui5-icon>
               <span>{message.type}</span>
               <ui5-label style="margin-inline-start:auto">
                 {message.timestamp.toLocaleTimeString("en-us", {

@@ -1,11 +1,9 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onMount } from 'svelte'
   import { WardStore } from '../../WardStore'
   import WardTreeItemUrl from './WardUrlsTreeItem.svelte'
   import { SelectionStore } from '../../SelectionStore'
-  import Ward from '@uncover/ward'
+  import { Ward } from '@uncover/ward'
 
   // Stores //
 

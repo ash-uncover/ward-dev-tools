@@ -1,11 +1,8 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onDestroy } from 'svelte'
   import { WardStore } from '../WardStore'
   import WardUrlsTree from './selection/WardUrlsTree.svelte'
   import WardPluginsTree from './selection/WardPluginsTree.svelte'
-  import WardDefinitionsTree from './selection/WardDefinitionsTree.svelte'
   import WardDetails from './details/WardDetails.svelte'
   import { SelectionStore, type SelectionData } from '../SelectionStore'
 

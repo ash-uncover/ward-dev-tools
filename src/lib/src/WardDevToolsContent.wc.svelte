@@ -1,4 +1,4 @@
-<svelte:options tag="ward-dev-tools-content" />
+<svelte:options customElement="ward-dev-tools-content" />
 
 <script lang="ts">
   import WardPlugins from "./plugins/WardPlugins.svelte";

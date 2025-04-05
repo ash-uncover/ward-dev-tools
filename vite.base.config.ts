@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import vitePluginExternal from 'vite-plugin-external'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { transform } from 'esbuild';
 import pkg from './package.json';
@@ -39,7 +40,11 @@ export default defineConfig({
     svelte({
       include: /\.wc\.svelte$/ as any,
     }),
-    minifyEs()
+    minifyEs(),
+    vitePluginExternal({
+      nodeBuiltins: true,
+      externalizeDeps: Object.keys(['@uncover/ward', 'ward'])
+    })
   ]
 });
 

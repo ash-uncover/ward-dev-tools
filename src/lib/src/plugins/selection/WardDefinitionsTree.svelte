@@ -1,5 +1,3 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onMount } from "svelte";
   import { WardStore } from "../../WardStore";

@@ -1,18 +1,18 @@
-<svelte:options tag="ward-dev-tools" />
+<svelte:options customElement="ward-dev-tools" />
 
 <script lang="ts">
   let avatar: any;
   let dialog: any;
 
   function onOpenDevTools() {
-    dialog.show();
+    dialog.open = true;
     setTimeout(() => {
       avatar.pressed = false;
     }, 0);
   }
 
   function onCloseDevTools() {
-    dialog.close();
+    dialog.open = false;
     setTimeout(() => {
       avatar.pressed = false;
       avatar.focus();
@@ -34,7 +34,7 @@
     interactive
     size="XS"
     on:click={onOpenDevTools}
-  />
+  ></ui5-avatar>
 
   <ui5-dialog
     bind:this={dialog}
@@ -44,7 +44,7 @@
     header-text={`Ward Dev Tools${window.uncover.wardVersion ? ` (${window.uncover.wardVersion})` : ''}`}
     resizable
   >
-    <ward-dev-tools-content />
+    <ward-dev-tools-content></ward-dev-tools-content>
     <ui5-bar slot="footer">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <ui5-button on:click={onCloseDevTools} slot="endContent">

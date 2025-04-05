@@ -1,5 +1,3 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte'
   import { WardStore } from '../../WardStore'
@@ -45,7 +43,7 @@
     text={urlId}
     data-attribute-id={urlId}
     selected={selectionType === 'url' && selectionId === urlId}
-  />
+  ></ui5-tree-item>
 {/if}
 
 <style>

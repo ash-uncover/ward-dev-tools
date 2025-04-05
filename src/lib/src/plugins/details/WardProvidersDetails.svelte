@@ -1,5 +1,3 @@
-<svelte:options tag={null} />
-
 <script lang="ts">
   import { WardStore } from '../../WardStore'
   import type PluginProvider from '@uncover/ward/dist/plugin/object/PluginProvider'

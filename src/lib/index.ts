@@ -9,14 +9,15 @@ import '@ui5/webcomponents-icons/dist/tree.js'
 import '@ui5/webcomponents-icons/dist/world.js'
 
 import '@ui5/webcomponents/dist/Avatar.js'
+import '@ui5/webcomponents/dist/Bar.js'
 import '@ui5/webcomponents/dist/Button.js'
-import '@ui5/webcomponents/dist/CustomListItem.js'
 import '@ui5/webcomponents/dist/Dialog.js'
 import '@ui5/webcomponents/dist/Input.js'
 import '@ui5/webcomponents/dist/Label.js'
 import '@ui5/webcomponents/dist/List.js'
+import '@ui5/webcomponents/dist/ListItemCustom.js'
+import '@ui5/webcomponents/dist/ListItemStandard.js'
 import '@ui5/webcomponents/dist/Panel.js'
-import '@ui5/webcomponents/dist/StandardListItem.js'
 import '@ui5/webcomponents/dist/SegmentedButton.js'
 import '@ui5/webcomponents/dist/SegmentedButtonItem.js'
 import '@ui5/webcomponents/dist/Tab.js'
@@ -28,7 +29,6 @@ import '@ui5/webcomponents/dist/Title.js'
 import '@ui5/webcomponents/dist/Tree.js'
 import '@ui5/webcomponents/dist/TreeItem.js'
 
-import '@ui5/webcomponents-fiori/dist/Bar.js'
 import "@ui5/webcomponents-fiori/dist/FlexibleColumnLayout.js";
 
 import './src/WardDevTools.wc.svelte';
