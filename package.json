@@ -36,7 +36,7 @@
     "@ui5/webcomponents-icons": "2.9.0",
     "@uncover/js-utils-logger": "ash-uncover/js-utils-logger",
     "@uncover/ward": "ash-uncover/ward",
-    "husky": "^9.1.7",
+    "husky": "9.1.7",
     "svelte": "5.25.6",
     "svelte-check": "4.1.5",
     "typescript": "5.8.3",
